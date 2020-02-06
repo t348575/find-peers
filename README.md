@@ -7,7 +7,8 @@
   npm i ip
   npm i bcryptjs
   ```
-  
+  ## Installation  
+  `npm i find-peers`
   ## Usage
    Import  
      ```
