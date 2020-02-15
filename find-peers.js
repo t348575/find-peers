@@ -97,4 +97,4 @@ findPeers = (MULTICAST_ADDR, MULTICAST_PORT, TCP_PORT, _SECRET_KEY, SEARCH_TIME)
         }, SEARCH_TIME * 1000);
     });
 };
-module.exports = { setIdentity, findPeers, tcpServer, sendConnection, getPeerSet };
+module.exports = { setIdentity, findPeers , getPeerSet };
