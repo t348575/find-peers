@@ -15,6 +15,9 @@ setIdentity = (options) => {
             if(v === 'app' && identity.hasOwnProperty(v)) {
                 identity.app = options[v];
             }
+            if(v === 'name' && identity.hasOwnProperty(v)) {
+                identity.name = options[v];
+            }
         }
     }
 };
