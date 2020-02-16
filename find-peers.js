@@ -26,7 +26,7 @@ tcpServer = function (PORT) {
         client.on('data', (data) => {
             try {
                 data = JSON.parse(data.toString());
-                if(bcrypt.compareSync(SECRET_KEY, data.key) && data.app === identity.app && searchPeers(data).length === 0) {
+                if(bcrypt.compareSync(SECRET_KEY, data.key) && data.app === identity.app && searchPeers(data).length === 0 && !data.hasOwnProperty('request')) {
                     removePendingPeers(data);
                     peerSet.push(data);
                     // console.log(`${data.ip} has been added to peerSet`);
@@ -76,7 +76,7 @@ findPeers = (MULTICAST_ADDR, MULTICAST_PORT, TCP_PORT, _SECRET_KEY, SEARCH_TIME)
     });
     socket.on("message", (data) => {
         data = JSON.parse(data);
-        if(data.ip && data.name && data.name !== identity.name) {
+        if(data.ip && data.name && data.name !== identity.name && !data.hasOwnProperty('request')) {
             let spl = searchPeers(data).length;
             let sppl = searchPendingPeers(data).length;
             if(spl === 0 && sppl === 0) {
