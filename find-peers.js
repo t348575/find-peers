@@ -8,7 +8,7 @@ let pending = [];
 let server, socket, socketCall;
 let SECRET_KEY, SECRET_KEY_HASH;
 setIdentity = (options) => {
-    identity.name =  '_' + Math.random().toString(36).substr(2, 9);
+    identity.name =  '_' + Math.random().toString(36).substr(2, 12);
     identity.ip = ip.address();
     for(let v in options) {
         if(!(typeof v === 'object' && v !== null)) {
@@ -28,9 +28,20 @@ tcpServer = function (PORT) {
                 data = JSON.parse(data.toString());
                 if(bcrypt.compareSync(SECRET_KEY, data.key) && data.app === identity.app && searchPeers(data).length === 0 && !data.hasOwnProperty('request')) {
                     removePendingPeers(data);
+                    let newPeerSet = {...data.peerSet};
+                    // console.log(`Pending peerSet received from ${data.ip}`);
+                    // console.log(newPeerSet);
+                    for(let v in newPeerSet)
+                        if(v.name !== identity.name && searchPendingPeers(v).length === 0)
+                            pending.push({ name: v.name, ip: v.ip });
+                    for(let v in newPeerSet)
+                        if(v.name !== identity.name && searchPendingPeers(v).length === 0)
+                            sendConnection(v.ip, PORT, SECRET_KEY_HASH);
+                    delete data.peerSet;
                     peerSet.push(data);
                     // console.log(`${data.ip} has been added to peerSet`);
                     sendConnection(data.ip, PORT, SECRET_KEY_HASH);
+                    client.end();
                 }
             } catch(err) {
                 console.log('Error!');
@@ -55,7 +66,7 @@ removePendingPeers = (data) => {
 getPeerSet = () => { return peerSet; };
 sendConnection = (IP, PORT) => {
     const client = net.createConnection({ host: IP, port: PORT }, function () {
-        client.write(JSON.stringify({ name: identity.name, ip: identity.ip, app: identity.app, key: SECRET_KEY_HASH }), () => client.end());
+        client.write(JSON.stringify({ name: identity.name, ip: identity.ip, app: identity.app, peerSet: peerSet, key: SECRET_KEY_HASH }), () => client.end());
     });
     client.on("error", (err) => {
         console.log("Caught flash policy server socket error: ");
