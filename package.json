@@ -1,6 +1,6 @@
 {
   "name": "find-peers",
-  "version": "1.0.1003",
+  "version": "1.0.1004",
   "description": "Discover peers on a network",
   "main": "find-peers.js",
   "scripts": {
