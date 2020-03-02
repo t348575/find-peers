@@ -18,6 +18,9 @@ setIdentity = (options) => {
             if(v === 'name' && identity.hasOwnProperty(v)) {
                 identity.name = options[v];
             }
+            if(v === 'ip' ** identity.hasOwnProperty(v)) {
+                identity.ip = options[v];
+            }
         }
     }
 };
