@@ -23,7 +23,7 @@
    
    Find peers  
     ```
-    // findPeers(MULTICAST_ADDRESS, MULTICAST_PORT, TCP_PORT, PASSCODE, SEARCH_TIME)
+    findPeers(MULTICAST_ADDRESS, MULTICAST_PORT, TCP_PORT, PASSCODE, SEARCH_TIME)
     findPeers('239.255.255.255', 15000, 15001, 'password', 10);
     ```
     
