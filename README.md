@@ -1,7 +1,10 @@
-# find-peers
+# ~~find-peers~~
 
   A module to find nodes on a network, using a multicast and a tcp server.
   
+  # V2
+   A second version using e2e along with numerous other features is in development
+   
   ## Dependencies
   ```
   npm i ip
