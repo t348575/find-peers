@@ -1,19 +1,35 @@
 {
-  "name": "find-peers",
-  "version": "1.0.1004",
-  "description": "Discover peers on a network",
-  "main": "find-peers.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/t348575/find-peers"
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "ip": "^1.1.5"
-  },
-  "author": "t348575",
-  "license": "MIT"
+    "name": "find-peers",
+    "version": "2.0.0",
+    "description": "A module to find nodes on a network, establish secure communication channels, execute code and much much more.",
+    "contact": "kjosephsubash@gmail.com",
+    "main": "dist/find-peers.js",
+    "scripts": {
+        "test": "nodemon test.js -e js",
+        "test2": "nodemon test2.js -e js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/t348575/find-peers"
+    },
+    "keywords": [],
+    "author": "t348575",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^14.0.27",
+        "argon2": "^0.26.2",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-useragent": "^1.0.15",
+        "ip": "^1.1.5",
+        "morgan": "^1.10.0",
+        "node-sass-middleware": "^0.11.0",
+        "rxjs": "^6.6.2",
+        "socket.io": "^2.3.0"
+    },
+    "prepublish": "tsc",
+    "devDependencies": {
+        "typescript": "^4.0.2"
+    }
 }

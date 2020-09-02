@@ -1,3 +1,11 @@
 node_modules/
 .idea/
 .vscode/
+options.csv
+private-key.pem
+public-key.pem
+test.js
+test2.js
+.git/
+skip/
+dist/
