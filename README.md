@@ -33,29 +33,29 @@
 
   #### Basic config
   ```js
-    const options = { autoGenId: true };
+  const options = { autoGenId: true };
    ```
   #### Create instance
   ```js
-    const find = new FindPeers(options);
+  const find = new FindPeers(options);
   ```
   #### Listen for events
   ```js
-      find.on('found-nodes', (data) => {
-          // new discovered nodes
-      });
-      find.on('server_up', () => {
-          console.log('server is up!');
-      });
-      find.on('server_err', (err) => {
-          console.log(err);
-      });
-      find.on('multicast_err', (err) => {
-          console.log(err);
-      });
-      find.on('echo', (data) => {
-          console.log(data.message, 'from', data.from.id);
-      });
+  find.on('found-nodes', (data) => {
+      // new discovered nodes
+  });
+  find.on('server_up', () => {
+      console.log('server is up!');
+  });
+  find.on('server_err', (err) => {
+      console.log(err);
+  });
+  find.on('multicast_err', (err) => {
+      console.log(err);
+  });
+  find.on('echo', (data) => {
+      console.log(data.message, 'from', data.from.id);
+  });
   ```
   ## Config options
   | Property            	| Description                                                                                                               	| Default value                                                               	|
