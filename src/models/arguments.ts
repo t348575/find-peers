@@ -31,6 +31,7 @@ export interface FindPeersOptions {
     pingLimit ?: number;
     useMonitorServer ?: boolean;
     monitorServerPort ?: number;
+    autoGenId ?: boolean;
     whiteList ?: string[];
     blackList ?: string[];
 }

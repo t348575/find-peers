@@ -8,6 +8,7 @@ import * as argon2 from 'argon2';
 import * as crypto from 'crypto';
 import * as qs from 'querystring';
 import * as axios from 'axios';
+import * as randomize from 'randomatic';
 import {DiffieHellman} from 'crypto';
 import {Identity} from './models/identity';
 import {TcpDataBuffer} from './network/tcp-data-buffer';
@@ -102,6 +103,7 @@ export class FindPeers extends EventEmitter {
     private syncServerURL: string;
     private syncServerCRUD: string = 'post';
     private syncServerArgs: any;
+    private autoGenId ?: boolean = false;
     private multicastClients = new Map<string, MulticastClient>();
     private serverClients = new Map<string, ServerClient>();
     private whiteList: string[] = [];
@@ -117,6 +119,9 @@ export class FindPeers extends EventEmitter {
         // TODO: identity set
         for (const v in options.identity) {
             this.identity[v] = options.identity[v];
+        }
+        if (this.autoGenId) {
+            this.identity.id = randomize('Aa0', 32);
         }
         // TODO: options validity checks
         (async() => {
