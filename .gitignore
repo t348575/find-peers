@@ -7,6 +7,7 @@ temp.md
 temp2.md
 private-key.pem
 public-key.pem
+public-cert.pem
 test.js
 test2.js
 .git/
