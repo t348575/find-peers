@@ -7,7 +7,7 @@
         "rootDir": "src",
         "removeComments": true,
         "strict": false,
-        "moduleResolution": "node",
+        "moduleResolution": "node"
     },
     "exclude": [
         "node_modules",

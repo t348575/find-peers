@@ -2,6 +2,9 @@ node_modules/
 .idea/
 .vscode/
 options.csv
+options2.csv
+temp.md
+temp2.md
 private-key.pem
 public-key.pem
 test.js
