@@ -1,6 +1,6 @@
 {
     "name": "find-peers",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "A module to find nodes on a network, establish secure communication channels, execute code and much much more.",
     "contact": "kjosephsubash@gmail.com",
     "main": "dist/find-peers.js",
