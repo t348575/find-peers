@@ -1,0 +1,405 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>find-peers - v2.0.3</title>
+	<meta name="description" content="Documentation for find-peers - v2.0.3">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json"
+				data-base=".">
+				<div class="field">
+					<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+					<input id="tsd-search-field" type="text" />
+				</div>
+				<ul class="results">
+					<li class="state loading">Preparing search index...</li>
+					<li class="state failure">The search index is not available</li>
+				</ul>
+				<a href="index.html" class="title">find-peers - v2.0.3</a>
+			</div>
+			<div class="table-cell" id="tsd-widgets">
+				<div id="tsd-filter">
+					<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+					<div class="tsd-filter-group">
+						<div class="tsd-select" id="tsd-filter-visibility">
+							<span class="tsd-select-label">All</span>
+							<ul class="tsd-select-list">
+								<li data-value="public">Public</li>
+								<li data-value="protected">Public/Protected</li>
+								<li data-value="private" class="selected">All</li>
+							</ul>
+						</div>
+						<input type="checkbox" id="tsd-filter-inherited" checked />
+						<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						<input type="checkbox" id="tsd-filter-externals" checked />
+						<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+					</div>
+				</div>
+				<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>find-peers - v2.0.3</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#find-peers" id="find-peers" style="color: inherit; text-decoration: none;">
+					<h1>find-peers</h1>
+				</a>
+				<p>A module to find nodes on a network, establish secure communication channels, execute code and much much more.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li><p><input checked="" disabled="" type="checkbox">  Communication channels after node discovery</p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  Node monitoring via a local web server <a href="https://www.npmjs.com/package/find-peers-monitor-server">find-peers-monitor-server</a></p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  Complete control over node &amp; remote access terminals (streamed I/O)</p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  Scale and execute code on connected peers (Javascript through <a href="https://nodejs.org/api/vm.html">Node.js VM</a> or executables through <a href="https://nodejs.org/api/child_process.html">Child Process</a>)</p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  File transfers &amp; file synchronisation</p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  Sync with a node list on a server</p>
+					</li>
+					<li><p><input checked="" disabled="" type="checkbox">  Automatically refresh node status every N seconds</p>
+					</li>
+					<li><p><del>Interact through emitted events, RXJS or promises</del> Event based</p>
+					</li>
+					<li><p><input checked="" disabled="" type="checkbox">  Communication through TCP, HTTP, TLS, HTTPS or <a href="https://socket.io/">Socket.io</a></p>
+					</li>
+					<li><p><input checked="" disabled="" type="checkbox">  Load saved, known clients</p>
+					</li>
+					<li><p><input disabled="" type="checkbox">  Definable master-slave sub networks / nodes</p>
+						<ul>
+							<li><input disabled="" type="checkbox"> 6 Authentication levels:</li>
+							<li><input checked="" disabled="" type="checkbox"> No authentication (0)</li>
+							<li><input checked="" disabled="" type="checkbox"> Hashed key exchange (1)</li>
+							<li><input checked="" disabled="" type="checkbox"> Encrypted key (2)</li>
+							<li><input checked="" disabled="" type="checkbox"> Generated key exchange (RSA, ec, x448) etc. (3)</li>
+							<li><input checked="" disabled="" type="checkbox"> End to end encryption (4)</li>
+							<li><input disabled="" type="checkbox"> Middle man server communication (5)
+								<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+									<h2>Installation</h2>
+								</a>
+								<pre><code><span style="color: #E1E4E8">npm i find</span><span style="color: #F97583">-</span><span style="color: #E1E4E8">peers </span><span style="color: #F97583">--</span><span style="color: #E1E4E8">save</span>
+</code></pre>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#installation-notes" id="installation-notes" style="color: inherit; text-decoration: none;">
+					<h2>Installation notes</h2>
+				</a>
+				<a href="#socketio" id="socketio" style="color: inherit; text-decoration: none;">
+					<h4>Socket.io</h4>
+				</a>
+				<p>To use find-peers in <a href="https://socket.io/">Socket.io</a> mode install it first.</p>
+				<pre><code><span style="color: #E1E4E8">npm i socket.io socket.io</span><span style="color: #F97583">-</span><span style="color: #E1E4E8">client</span>
+</code></pre>
+				<a href="#node-forge" id="node-forge" style="color: inherit; text-decoration: none;">
+					<h4>node-forge</h4>
+				</a>
+				<p>To automatically generate self signed SSL certificates at runtime <a href="https://www.npmjs.com/package/node-forge">node-forge</a> must be installed.</p>
+				<pre><code><span style="color: #E1E4E8">npm i node</span><span style="color: #F97583">-</span><span style="color: #E1E4E8">forge</span>
+</code></pre>
+				<a href="#quick-usage" id="quick-usage" style="color: inherit; text-decoration: none;">
+					<h2>Quick usage</h2>
+				</a>
+				<a href="#import-it" id="import-it" style="color: inherit; text-decoration: none;">
+					<h4>Import it</h4>
+				</a>
+				<pre><code class="language-js"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">FindPeers</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">require</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;find-peers&#039;</span><span style="color: #E1E4E8">);</span>
+</code></pre>
+				<a href="#basic-config" id="basic-config" style="color: inherit; text-decoration: none;">
+					<h4>Basic config</h4>
+				</a>
+				<pre><code class="language-js"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">options</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> { autoGenId: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> };</span>
+</code></pre>
+				<a href="#create-instance" id="create-instance" style="color: inherit; text-decoration: none;">
+					<h4>Create instance</h4>
+				</a>
+				<pre><code class="language-js"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">find</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">FindPeers</span><span style="color: #E1E4E8">(options);</span>
+</code></pre>
+				<a href="#listen-for-events" id="listen-for-events" style="color: inherit; text-decoration: none;">
+					<h4>Listen for events</h4>
+				</a>
+				<pre><code class="language-js"><span style="color: #E1E4E8">  find.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;found-nodes&#039;</span><span style="color: #E1E4E8">, (</span><span style="color: #FFAB70">data</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> {</span>
+<span style="color: #E1E4E8">      </span><span style="color: #6A737D">// new discovered nodes</span>
+<span style="color: #E1E4E8">  });</span>
+<span style="color: #E1E4E8">  find.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;server_up&#039;</span><span style="color: #E1E4E8">, () </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> {</span>
+<span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;server is up!&#039;</span><span style="color: #E1E4E8">);</span>
+<span style="color: #E1E4E8">  });</span>
+<span style="color: #E1E4E8">  find.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;server_err&#039;</span><span style="color: #E1E4E8">, (</span><span style="color: #FFAB70">err</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> {</span>
+<span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(err);</span>
+<span style="color: #E1E4E8">  });</span>
+<span style="color: #E1E4E8">  find.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;multicast_err&#039;</span><span style="color: #E1E4E8">, (</span><span style="color: #FFAB70">err</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> {</span>
+<span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(err);</span>
+<span style="color: #E1E4E8">  });</span>
+<span style="color: #E1E4E8">  find.</span><span style="color: #B392F0">on</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;echo&#039;</span><span style="color: #E1E4E8">, (</span><span style="color: #FFAB70">data</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> {</span>
+<span style="color: #E1E4E8">      console.</span><span style="color: #B392F0">log</span><span style="color: #E1E4E8">(data.message, </span><span style="color: #9ECBFF">&#039;from&#039;</span><span style="color: #E1E4E8">, data.from.id);</span>
+<span style="color: #E1E4E8">  });</span>
+</code></pre>
+				<a href="#config-options" id="config-options" style="color: inherit; text-decoration: none;">
+					<h2>Config options</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Property</th>
+							<th>Description</th>
+							<th>Default value</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>autoGenId</td>
+							<td>Automatically generate a 32 word random id</td>
+							<td>false</td>
+						</tr>
+						<tr>
+							<td>identity</td>
+							<td>Set node details: id, bind to ip etc.</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>securityLevel</td>
+							<td>Security mode of the library to be used</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>verifyTries</td>
+							<td>Number of times to attempt to verify a node during initial pairing</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>tryTime</td>
+							<td>Timeout limit</td>
+							<td>10000</td>
+						</tr>
+						<tr>
+							<td>hashOptions</td>
+							<td>Options passed to argon 2 as per argon2.Options from <a href="https://github.com/ranisalt/node-argon2">node-argon2</a> ( 1 )</td>
+							<td><pre>{ hashLength: 32, memoryCost: 2**16, parallelism: 1, type: argon2.argon2i }</pre></td>
+						</tr>
+						<tr>
+							<td>modLength</td>
+							<td>Length of generated RSA key ( 3 )</td>
+							<td>2048</td>
+						</tr>
+						<tr>
+							<td>keyGenGroup</td>
+							<td>Algorithm for key generation ( 3 )</td>
+							<td>rsa</td>
+						</tr>
+						<tr>
+							<td>aesVersion</td>
+							<td>Type of aes-256 to be used ( 2 - 4 )</td>
+							<td>aes-256-cbc</td>
+						</tr>
+						<tr>
+							<td>oaepHash</td>
+							<td>Hash to use alongside pbkdf2</td>
+							<td>sha-256</td>
+						</tr>
+						<tr>
+							<td>groupName</td>
+							<td>Mod group to use in Diffie - Hellman exchange</td>
+							<td>modp15</td>
+						</tr>
+						<tr>
+							<td>autoStartSearch</td>
+							<td>Automatically start searching for nodes as soon as object is created</td>
+							<td>true</td>
+						</tr>
+						<tr>
+							<td>serverType</td>
+							<td>Server type to be used for communication after node discovery</td>
+							<td>tcp</td>
+						</tr>
+						<tr>
+							<td>serverPort</td>
+							<td>Server port</td>
+							<td>19235</td>
+						</tr>
+						<tr>
+							<td>multicastPort</td>
+							<td>Multicast port</td>
+							<td>18235</td>
+						</tr>
+						<tr>
+							<td>broadCastInterval</td>
+							<td>Interval at which to send out multicast</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>multiCastTimeout</td>
+							<td>Duration of node search</td>
+							<td>60000</td>
+						</tr>
+						<tr>
+							<td>multiCastReSearch</td>
+							<td>Automatically re - search for nodes</td>
+							<td>300000</td>
+						</tr>
+						<tr>
+							<td>shouldReSearch</td>
+							<td>Enable re - search</td>
+							<td>false</td>
+						</tr>
+						<tr>
+							<td>searchForever</td>
+							<td>Disable multiCastTimeout and re - search</td>
+							<td>false</td>
+						</tr>
+						<tr>
+							<td>shouldPing</td>
+							<td>Ping nodes to veriy if still active</td>
+							<td>false</td>
+						</tr>
+						<tr>
+							<td>pingInterval</td>
+							<td>Interval to ping nodes at</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>pingCount</td>
+							<td>Number of failed ping attempts before marked as disconnect</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>temporaryDisconnect</td>
+							<td>Number of failed ping attempts before marked as temporary disconnect</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>pingMIA</td>
+							<td>Number of seconds between ping reponses to be marked as temporary disconnect</td>
+							<td>25000</td>
+						</tr>
+						<tr>
+							<td>pingLimit</td>
+							<td>Number of failed ping attempts before reconnection attempts are stopped</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>whiteList</td>
+							<td>Array of nodes (by ip or id) to be whitelisted from ping</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>blackList</td>
+							<td>Array of nodes (by ip or id) to be blacklisted from connections</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>privateServerKey</td>
+							<td>Private key for https, tls server or Socket.io https server</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>certificate</td>
+							<td>Certificate / public key for https, tls server or Socket.io https server</td>
+							<td>undefined</td>
+						</tr>
+						<tr>
+							<td>genKeypair</td>
+							<td>Automatically generate an SSL key pair (private key, certificate) for use with https, tls or Socket.io https server using <a href="https://www.npmjs.com/package/node-forge">node-forge</a></td>
+							<td>false</td>
+						</tr>
+						<tr>
+							<td>attrs</td>
+							<td>Attributes passed for SSL key pair generation (country name, address, organization name, etc...)</td>
+							<td><pre> [{ name :  'commonName' ,  value :  'example.org' } ,  <br>{ name :  'countryName' ,  value :  'US' } ,       <br>{ shortName :  'ST' ,  value :  'Virginia' } ,       <br>{ name :  'localityName' ,  value :  'Blacksburg' } ,       <br>{ name :  'organizationName' ,  value :  'Test' } ,       <br>{ shortName :  'OU' ,  value :  'Test' }] </pre></td>
+						</tr>
+						<tr>
+							<td>socketIOOptions</td>
+							<td>Options to be used with Socket.io server</td>
+							<td><pre> { path:'/', mode:'http' } </pre></td>
+						</tr>
+				</tbody></table>
+				<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
+					<h2>Functions</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Function</th>
+							<th>Description</th>
+							<th>Arguments</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>getClients</td>
+							<td>Get entire list of verified nodes</td>
+							<td>void</td>
+						</tr>
+						<tr>
+							<td>echo</td>
+							<td>Send a message to all nodes</td>
+							<td>message: string, omit ?: string[]</td>
+						</tr>
+						<tr>
+							<td>messageClient</td>
+							<td>Send message to a specific node</td>
+							<td>id: string, message: string</td>
+						</tr>
+						<tr>
+							<td>getIdentity</td>
+							<td>Get identity object of current node</td>
+							<td>void</td>
+						</tr>
+				</tbody></table>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/findpeers.html">Find<wbr>Peers</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/types.html">types</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

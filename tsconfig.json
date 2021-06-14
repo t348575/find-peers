@@ -2,17 +2,27 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es6",
-        "sourceMap": true,
+        "lib": ["es2019", "es2017", "es7", "es6"],
+        "sourceMap": false,
         "outDir": "dist",
         "rootDir": "src",
         "removeComments": true,
         "strict": false,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "declaration": true
     },
     "exclude": [
         "node_modules",
         "dist",
         "skip"
     ],
-    "declaration": true
+    "typedocOptions": {
+        "entryPoints": ["src/index.ts"],
+        "out": "docs",
+        "excludePrivate": true,
+        "includes": "src",
+        "includeVersion": true,
+        "theme": "node_modules/typedoc-darker-theme/bin/default/",
+        "highlightTheme": "github-dark"
+    }
 }

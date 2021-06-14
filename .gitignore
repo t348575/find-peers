@@ -10,6 +10,8 @@ public-key.pem
 public-cert.pem
 test.js
 test2.js
+test3.js
 .git/
 skip/
 dist/
+clients.json

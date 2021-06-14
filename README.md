@@ -1,26 +1,28 @@
-# find-peers ![Visits](https://nkvnu62257.execute-api.ap-south-1.amazonaws.com/production?repo=find-peers)
+# find-peers
 
 A module to find nodes on a network, establish secure communication channels, execute code and much much more.
 
 ## Features
-- [ ] Communication channels after node discovery
+- [x] Communication channels after node discovery
 
-- [ ] Node monitoring via a local web server
-- [ ] Complete control over node & remote access terminals
-- [ ] Scale and execute code on connected peers (Javascript through [Node.js VM](https://nodejs.org/api/vm.html) or binary executables through [Child Process](https://nodejs.org/api/child_process.html))
+- [ ] Node monitoring via a local web server [find-peers-monitor-server](https://www.npmjs.com/package/find-peers-monitor-server)
+- [ ] Complete control over node & remote access terminals (streamed I/O)
+- [ ] Scale and execute code on connected peers (Javascript through [Node.js VM](https://nodejs.org/api/vm.html) or executables through [Child Process](https://nodejs.org/api/child_process.html))
 - [ ] File transfers & file synchronisation
 - [ ] Sync with a node list on a server
 - [x] Automatically refresh node status every N seconds
-- [ ] Interact through emitted events, RXJS or promises
-- [x] Communication through TCP, HTTP, TLS, HTTPS or socket.io
+- [ ] ~~Interact through emitted events, RXJS or promises~~ Event based
+- [x] Communication through TCP, HTTP, TLS, HTTPS or [Socket.io](https://socket.io/)
+- [x] Load saved, known clients
 - [ ] Definable master-slave sub networks / nodes
-- [ ] 6 Authentication levels:
-- [x] No authentication (0)
-- [x] Hashed key exchange (1)
-- [x] Encrypted key (2)
-- [x] Generated key exchange (RSA, ec, x448) etc. (3)
-- [x] End to end encryption (4)
-- [ ] Middle man server communication (5)
+    - [ ] 6 Authentication levels:
+    
+    - [x] No authentication (0)
+    - [x] Hashed key exchange (1)
+    - [x] Encrypted key (2)
+    - [x] Generated key exchange (RSA, ec, x448) etc. (3)
+    - [x] End to end encryption (4)
+    - [ ] Middle man server communication (5)
 ## Installation  
 ```
 npm i find-peers --save
@@ -30,8 +32,7 @@ npm i find-peers --save
 #### Socket.io
 To use find-peers in [Socket.io](https://socket.io/) mode install it first.
 ```
-npm i socket.io-client
-npm i socket.io
+npm i socket.io socket.io-client
 ``` 
 #### node-forge
 To automatically generate self signed SSL certificates at runtime [node-forge](https://www.npmjs.com/package/node-forge) must be installed.
