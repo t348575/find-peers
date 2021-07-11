@@ -2,6 +2,8 @@
 
 A module to find nodes on a network, establish secure communication channels, execute code and much much more.
 
+## NOTE: v3.0 will depreciate http/s, socket.io, hashed key exchange.
+
 ## Features
 - [ ] Communication channels after node discovery
 
