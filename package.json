@@ -27,7 +27,7 @@
         "@types/socket.io": "^2.1.11",
         "@types/socket.io-client": "^1.4.34",
         "node-cmd": "^3.0.0",
-        "node-forge": "^0.10.0",
+        "node-forge": "^1.0.0",
         "nodemon": "^2.0.4",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.1",
